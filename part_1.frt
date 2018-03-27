@@ -3,15 +3,15 @@
 : is_prime
     dup 1 = if 0 . else
       dup 2 = if 1 . else
-        dup dup 2 do dup r@ % if else r> drop dup >r drop 6 then loop = .
+        dup dup 2 do dup r@ % if else r> drop dup >r drop 6 then loop =
       then
     then ;
 
 ( 5 )
-: write 1 allot dup rot swap ! . ;
+: write 1 allot dup rot swap ! ;
 
 ( 3 )
-: is_even 2 % 0 = . ;
+: is_even 2 % 0 = ;
 
 : inc 1 + ;
 : dec 1 - ;
@@ -51,6 +51,7 @@
     repeat
       dup 2 %
       if dup 3 * inc else dup 2 / then
-      dup 1 =
+      swap . cr dup 1 =
     until
+    . cr
 ;
